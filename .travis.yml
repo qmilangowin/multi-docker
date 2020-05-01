@@ -4,7 +4,7 @@ services:
 
 
 before_install:
-  - docker build -t milan320/react-test -f ./client/Dockerfile.dev
+  - docker build -t milan320/react-test -f ./client/Dockerfile.dev .
 
 
 script:
