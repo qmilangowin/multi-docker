@@ -4,7 +4,7 @@ services:
 
 
 before_install:
-  - docker build -t milan320/multi-docker -f ./client/Dockerfile.dev .
+  - docker build -t milan320/multi-docker -f ./client/Dockerfile.dev ./client
 
 
 script:
