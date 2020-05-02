@@ -1,0 +1,37 @@
+{
+    "AWSEBDockerrunVersion":2, 
+    "containerDefinitions":[
+        {
+            "name":"client",
+            "image":"milan320/multi-client",
+            "hostname":"client",
+            "essential": false
+        },
+        {
+            "name":"server",
+            "image":"milan320/multi-server",
+            "hostname": "api",
+            "essential": false 
+        },
+        {
+            "name":"worker",
+            "image":"milan320/multi-worker",
+            "hostname":"worker",
+            "essential": false
+        },
+        {
+            "name":"nginx",
+            "image":"milan320/multi-nginx",
+            "hostname":"nginx",
+            "essential": true,
+            "portMappings":[
+                {
+                    "hostPort":80,
+                    "containerPort":80
+                }
+            ],
+            "links":["client", "server"]
+
+        }
+    ]
+}
